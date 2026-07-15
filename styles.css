@@ -72,3 +72,5 @@
             20% { opacity: 0.8; }
             100% { transform: translateY(-80px) scale(1.2); opacity: 0; }
         }
+
+        

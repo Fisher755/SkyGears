@@ -35,7 +35,7 @@
             </div>
             
             <div class="flex items-center gap-4">
-                <a href="https://discord.gg/5DG9XbPK2" target="_blank" 
+                <a href="https://discord.gg/jTaXk8WKRj" target="_blank" 
                    class="px-5 py-2 bg-[#c97e3b] hover:bg-[#f1c232] text-[#0a1428] font-bold text-sm uppercase tracking-widest transition-all flex items-center gap-2">
                     <i class="fa-brands fa-discord"></i>
                     <span>DISCORD</span>
@@ -74,10 +74,10 @@
                     </button>
                     
                     <button onclick="downloadPack()" 
-                            class="px-10 py-5 border-2 border-[#f1c232] hover:bg-white/10 text-[#f1c232] text-xl font-bold uppercase tracking-widest transition-all flex items-center gap-3">
-                        <i class="fa-solid fa-download"></i>
-                        <span>Скачать сборку</span>
-                    </button>
+                    class="px-10 py-5 border-2 border-[#f1c232] hover:bg-white/10 text-[#f1c232] text-xl font-bold uppercase tracking-widest transition-all flex items-center gap-3">
+                    <i class="fa-solid fa-download"></i>
+                    <span>Скачать сборку</span>
+</button>
                 </div>
                 
                 <div class="mt-12 flex items-center gap-8 text-sm">
@@ -265,7 +265,11 @@
                 <h2 class="title-font text-6xl mb-4">Как начать играть</h2>
                 <p class="text-xl text-gray-400">Всего 5 минут до полёта</p>
             </div>
-            
+
+            <div class="button">
+                
+            </div>
+                        
             <div class="space-y-8">
                 <div class="flex gap-8 items-start">
                     <div class="w-12 h-12 shrink-0 bg-[#c97e3b] text-[#0a1428] rounded-2xl flex items-center justify-center font-bold text-2xl">1</div>
@@ -292,15 +296,15 @@
                     <div class="w-12 h-12 shrink-0 bg-[#c97e3b] text-[#0a1428] rounded-2xl flex items-center justify-center font-bold text-2xl">4</div>
                     <div>
                         <h3 class="text-2xl mb-2">Добавь сервер</h3>
-                        <p class="font-mono text-[#f1c232]">ДОБАВИТЬ СЕРВЕР!!!</p>
+                        <p class="font-mono text-[#f1c232]">fsn8.joinserver.xyz:25600</p>
                     </div>
                 </div>
             </div>
             
             <div class="mt-16 text-center">
-                <button onclick="downloadPack()" 
-                        class="px-16 py-6 bg-gradient-to-r from-[#c97e3b] to-[#f1c232] text-[#0a1428] text-2xl font-bold uppercase tracking-widest hover:scale-105 transition">
-                    Скачать сборку прямо сейчас
+                <button onclick="openApplicationModal()" 
+                    class="w-full py-5 bg-gradient-to-r from-[#c97e3b] to-[#f1c232] text-[#0a1428] font-bold text-xl uppercase tracking-widest rounded-2xl hover:scale-105 transition">
+                    Подать заявку на SkyGears
                 </button>
             </div>
         </div>
@@ -327,6 +331,8 @@
             </div>
         </div>
     </section>
+
+    
 
     <!-- TEAM -->
     <section id="team" class="py-24 bg-[#0a1428]">
@@ -390,20 +396,28 @@
                     <div class="w-9 h-9 bg-[#c97e3b] rounded-full flex items-center justify-center mechanism">
                         ⚙️
                     </div>
-                    <div class="title-font text-3xl">Create Aeronautics</div>
+                    <div class="title-font text-3xl">Sky Gears</div>
                 </div>
                 
                 <div class="flex gap-8 text-3xl">
-                    <a href="https://discord.gg/5DG9XbPK2" class="hover:text-[#f1c232]"><i class="fa-brands fa-discord"></i></a>
+                    <a href="https://discord.gg/jTaXk8WKRj" class="hover:text-[#f1c232]"><i class="fa-brands fa-discord"></i></a>
                     <a href="#" class="hover:text-[#f1c232]"><i class="fa-brands fa-telegram"></i></a>
                     <a href="https://vk.ru/skygears" class="hover:text-[#f1c232]"><i class="fa-brands fa-vk"></i></a>
-                    <a href="https://www.youtube.com" class="hover:text-[#f1c232]"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@skygears1?_r=1&_t=ZS-983mr9Na8If" class="hover:text-[#f1c232]"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/skygearsmc?igsh=MWZwdTNrcGNjNDU2Mg%3D%3D&utm_source=qr" class="hover:text-[#f1c232]"><i class="fa-brands fa-instagram"></i></a>
                 </div>
                 
                 <div class="text-center md:text-right">
                     <a href="#" class="block hover:text-[#f1c232]">Правила сервера</a>
-                    <p class="text-xs opacity-60 mt-6">© 2026 Create Aeronautics. Все права защищены.</p>
+                    <p class="text-xs opacity-60 mt-6">© 2026 Sky Gears. Все права защищены.</p>
                 </div>
+
+                <!-- <div>
+                    <select id="language-select">
+                        <option value="ru">🇷🇺 Русский</option>
+                        <option value="en">🇬🇧 English</option>
+                    </select>
+                </div> -->
             </div>
         </div>
     </footer>
@@ -415,6 +429,96 @@
             <img id="lightbox-image" src="" class="w-full rounded-3xl shadow-2xl" alt="">
         </div>
     </div>
+
+   <!-- МОДАЛЬНОЕ ОКНО ЗАЯВКИ -->
+    <div id="application-modal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100] p-4">
+        <div class="bg-[#1a2338] border border-[#c97e3b] rounded-3xl w-full max-w-lg max-h-[92vh] flex flex-col">
+            
+            <!-- Header -->
+            <div class="bg-[#0a1428] p-6 flex items-center justify-between border-b border-[#c97e3b] shrink-0">
+                <h2 class="title-font text-3xl">Заявка на SkyGears</h2>
+                <button onclick="closeApplicationModal()" class="text-4xl leading-none text-gray-400 hover:text-white">×</button>
+            </div>
+
+            <!-- Прокручиваемая форма -->
+            <div class="overflow-y-auto flex-1 p-8" style="max-height: calc(92vh - 140px);">
+                <p class="text-gray-300 mb-8">
+                    Чтобы попасть на проект SkyGears, нужно подать заявку.<br>
+                    Проходка стоит <span class="text-[#f1c232] font-bold">200 ₽</span> (1 месяц).
+                </p>
+
+                <form id="skygears-form" class="space-y-6">
+                    <div>
+                        <label class="block text-sm mb-2">Никнейм в Minecraft *</label>
+                        <input type="text" id="nickname" required class="w-full bg-[#0a1428] border border-[#c97e3b]/50 rounded-2xl px-5 py-4">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm mb-2">Сколько вам лет? *</label>
+                        <input type="number" id="age" required min="10" max="99" class="w-full bg-[#0a1428] border border-[#c97e3b]/50 rounded-2xl px-5 py-4">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm mb-2">Ваш ник в Discord в формате Nick#000</label>
+                        <input type="number" id="age" required min="10" max="99" class="w-full bg-[#0a1428] border border-[#c97e3b]/50 rounded-2xl px-5 py-4">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm mb-2">Был ли опыт игры на приватных серверах? Если да, то на каких?</label>
+                        <input type="number" id="age" required min="10" max="99" class="w-full bg-[#0a1428] border border-[#c97e3b]/50 rounded-2xl px-5 py-4">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm mb-2">Сколько времени Вы готовы уделять проекту?</label>
+                        <input type="number" id="age" required min="10" max="99" class="w-full bg-[#0a1428] border border-[#c97e3b]/50 rounded-2xl px-5 py-4">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm mb-2">Что хотите реализовать в проекте?</label>
+                        <input type="number" id="age" required min="10" max="99" class="w-full bg-[#0a1428] border border-[#c97e3b]/50 rounded-2xl px-5 py-4">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm mb-2">Есть ли у Вас YouTube канал? Планируете ли вы снимать контент на сервере?</label>
+                        <input type="number" id="age" required min="10" max="99" class="w-full bg-[#0a1428] border border-[#c97e3b]/50 rounded-2xl px-5 py-4">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm mb-2">Откуда Вы узнали про наш проект?</label>
+                        <input type="number" id="age" required min="10" max="99" class="w-full bg-[#0a1428] border border-[#c97e3b]/50 rounded-2xl px-5 py-4">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm mb-2">Почему Вам приглянулся именно наш сервер?</label>
+                        <input type="number" id="age" required min="10" max="99" class="w-full bg-[#0a1428] border border-[#c97e3b]/50 rounded-2xl px-5 py-4">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm mb-2">Почему хотите попасть на SkyGears?</label>
+                        <textarea id="reason" rows="5" placeholder="Напишите пару слов..." 
+                                class="w-full bg-[#0a1428] border border-[#c97e3b]/50 rounded-2xl px-5 py-4"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-5 bg-gradient-to-r from-[#c97e3b] to-[#f1c232] text-[#0a1428] font-bold text-xl uppercase tracking-widest rounded-2xl">
+                        Отправить заявку
+                    </button>
+                </form>
+            </div>
+
+            <!-- Footer с Telegram -->
+            <div class="p-6 bg-[#0a1428] border-t border-[#c97e3b] text-center shrink-0">
+                <a href="https://t.me/ВАШ_ТЕЛЕГРАМ" target="_blank" 
+                class="inline-flex items-center gap-2 text-[#f1c232] hover:underline">
+                    <i class="fa-brands fa-telegram text-xl"></i>
+                    Написать в Telegram после оплаты
+                </a>
+            </div>
+        </div>
+    </div>
+        
+        
+    </div>
+</div>
 
 </body>
 </html>

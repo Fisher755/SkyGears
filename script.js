@@ -54,3 +54,49 @@
             liveCounter();
             console.log('%cCreate Aeronautics сайт успешно загружен! 🚀', 'color:#f1c232; font-family:monospace');
         };
+        
+       // Открытие модального окна
+        function openApplicationModal() {
+            document.getElementById('application-modal').classList.remove('hidden');
+            document.getElementById('application-modal').classList.add('flex');
+        }
+
+        // Закрытие модального окна
+        function closeApplicationModal() {
+            const modal = document.getElementById('application-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function downloadPack() {
+            // Сюда вставь прямую ссылку на архив
+            window.open('https://drive.google.com/file/d/1lYURX3t_CcsU_6KlhW_vv53cfqg9qVvG/view?usp=drive_link', '_blank');
+        }
+
+        // Обработка формы
+        document.getElementById('skygears-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nickname = document.getElementById('nickname').value.trim();
+            const age = document.getElementById('age').value;
+            
+            if (!nickname || !age) {
+                alert('Пожалуйста, заполните никнейм и возраст');
+                return;
+            }
+
+            alert(`✅ Заявка от ${nickname} успешно отправлена!\n\nМы свяжемся с вами в Telegram в ближайшее время.`);
+
+            closeApplicationModal();
+            this.reset();
+        });
+
+        // Закрытие по ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+                const modal = document.getElementById('application-modal');
+                if (!modal.classList.contains('hidden')) {
+                    closeApplicationModal();
+                }
+            }
+        });
